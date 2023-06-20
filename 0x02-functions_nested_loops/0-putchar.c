@@ -5,6 +5,8 @@
  */
 int main(void)
 {
+	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 main.c _putchar.c -o putchar ./putchar
+
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
