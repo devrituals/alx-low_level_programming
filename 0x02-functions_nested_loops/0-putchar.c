@@ -1,20 +1,25 @@
-#include <main.h>
+#include "main.h"
+#define MAXSTRING 80
+
 /**
- * _putchar - 
- * Return: Always 0 (Success)
+ * main-function main
+ * Return:0
  */
+
 int main(void)
 {
+	int g;
+	char k[]  = "_putchar";
 
-	_putchar('_');
-	_putchar('p');
-	_putchar('u');
-	_putchar('t');
-	_putchar('c');
-	_putchar('h');
-	_putchar('a');
-	_putchar('r');
-	_putchar('\n');
-	
+	for (g = 0; g < MAXSTRING; g++)
+	{
+		if  (k[g] == '\0')
+		{
+			_putchar('\n');
+			break;
+		}
+		else
+			_putchar(k[g]);
+	}
 	return (0);
 }
