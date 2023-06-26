@@ -7,7 +7,7 @@
  * @b: number to be swaped with the first one
  */
 
-void swap_int(int *a, int *b);
+void swap_int(int *a, int *b)
 {
 	int p;
 
