@@ -18,7 +18,7 @@ int _strlen(char *s)
 }
 /**
  *cap_string - changes all lowercase letters
- *@s1: pointer parameter"
+ *@s1: pointer parameter
  *Description: changes all lowercase letters
  *Return: return pointer
  */
