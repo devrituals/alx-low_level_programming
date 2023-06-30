@@ -1,26 +1,41 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * string_toupper - A function that conver lower
- * cases to upper case
- * @lwr:lowercase to uppercase
- * Return:the result of the change
+ *_strlen - reset number
+ *Description: This function return a length for some string
+ *@s: pointer char
+ *Return: int length
  */
 
-char *string_toupper(char *lwr)
+int _strlen(char *s)
 {
-	int p;
+	int len = 0;
 
-	p = 0;
-	while (lwr[p] != '\0')
+	while (*s++)
 	{
-		if (lwr[p] >= 'a' && lwr[p] <= 'z')
-		{
-			lwr[p] = lwr[p] - 32;
-		}
-		lwr++;
+		len++;
 	}
-	return (lwr);
+	return (len);
+}
+/**
+ *string_toupper - changes all lowercase letters
+ *@s1: pointer parameter"
+ *Description: changes all lowercase letters
+ *Return: return pointer
+ */
+char *string_toupper(char *s1)
+{
+	int i, j;
+
+	for (i = 0; i < _strlen(s1); i++)
+	{
+		for (j = 'a'; j <= 'z'; j++)
+		{
+			if (s1[i] == j)
+			{
+				s1[i] = j - 32;
+			}
+		}
+	}
+	return (s1);
 }
 
