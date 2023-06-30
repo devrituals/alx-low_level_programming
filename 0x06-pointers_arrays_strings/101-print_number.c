@@ -1,42 +1,27 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- *print_number - print numbers
- *@n: int parameter
- *Description: this function print numbers
- *Return: Nothing
+ * print_number - A function to print inputed
+ * number as it is
+ * @n:number to be printed
  */
 
 void print_number(int n)
 {
-	int aux;
+	unsigned int n1;
 
 	if (n < 0)
 	{
-		_putchar('-');
-		n = n * -1;
+		n1 = -n;
+		putchar('-');
+	}
+	else
+	{
+		n1 = n;
 	}
 
-	if (n == 0)
-	{
-		_putchar('0');
-	} else if (n > 0 && n < 100)
-	{
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	} else if (n >= 100 && n <= 999)
-	{
-		aux = n / 10;
-		_putchar(aux / 10 + '0');
-		_putchar(aux % 10 + '0');
-		_putchar(n % 10 + '0');
-	} else if (n >= 1000 && n <= 9999)
-	{
-		aux = n / 100;
-		n = n % 100;
-		_putchar(aux / 10 + '0');
-		_putchar(aux % 10 + '0');
-		_putchar(n / 10 + '0');
-		_putchar(n % 10 + '0');
-	}
+	if (n1 / 10)
+		print_number(n1 / 10);
+	putchar((n1 % 10) + '0');
 }
