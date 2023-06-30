@@ -1,29 +1,37 @@
-#include "main.h"
-#include <stdio.h>
-
+#include "holberton.h"
 /**
- * _strcat - function to concertenate strings
- * @:dest:destination string recieving the strings
- * @:souce string
- * Return:dest
+ *_strlen - reset number
+ *Description: This function return a length for some string
+ *@s: pointer char
+ *Return: int length
  */
 
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s++)
+	{
+		len++;
+	}
+	return (len);
+}
+/**
+ *_strcat - similar function: strcat
+ *@dest: pointer parameter whit string "Hello "
+ *@src: pointer parameter whit string "World!\n"
+ *Description: This function merge two strings
+ *Return: "Hello World!"
+ */
 char *_strcat(char *dest, char *src)
 {
-	int k, p; /* p and k holds the lenght of destination and source string*/
+	int dest_len = _strlen(dest);
+	int n = _strlen(src);
+	int i;
 
-	p = 0;
-	while (dest[p] != '\0')
-	{
-		p++;
-	}
-	k = 0;
-	while (src[k] != '\0')
-	{
-		dest[p] = src[k];
-		p++;
-		k++;
-	}
-	dest[p] = '\0';
+	for (i = 0 ; i < n && src[i] != '\0' ; i++)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
+
 	return (dest);
 }
