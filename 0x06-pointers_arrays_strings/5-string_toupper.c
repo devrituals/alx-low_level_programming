@@ -23,3 +23,4 @@ char *string_toupper(char *lwr)
 	}
 	return (lwr);
 }
+
