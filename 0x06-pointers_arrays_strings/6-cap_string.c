@@ -58,4 +58,5 @@ char *cap_string(char *s1)
 		}
 	}
 	return (s1);
-}		
+}
+
