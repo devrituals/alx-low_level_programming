@@ -1,29 +1,33 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * rot13 - a function to rotate a given string in 13 places
- * of thevalphabets
- * @s:pointer to string to be rotated
- * Return:s string after rotating
+ *rot13 - Rotate letters
+ *@s1: pointer parameter
+ *Description: Rotate letters
+ *Return: return pointer
  */
-
-char *rot13(char *s)
+char *rot13(char *s1)
 {
-	int p, k;
+	int j;
+	char *pString = s1;
 
-	char m[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char n[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	for (k = 0; s[k] != '\0'; k++)
+	char encodes[2][53] = {
+	{"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"},
+	{"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"}
+				};
+
+	while (*pString != '\0')
 	{
-		for (p = 0; m[p] != '\0'; p++)
+		char letter = *pString;
+
+		for (j = 0; j < 52; j++)
 		{
-			if (s[k] == m[p])
+			if (letter == encodes[0][j])
 			{
-				s[k] = n[p];
-				break;
+				*pString = encodes[1][j];
 			}
 		}
+		pString++;
 	}
-	return (s);
+	return (s1);
 }
+
