@@ -1,39 +1,61 @@
 #include "main.h"
-#include <stdio.h>
-
 /**
- * cap_string - A function that capitalizes every
- * character it runs on
- * @s:string variable
- * Return:s result
+ *_strlen - reset number
+ *Description: This function return a length for some string
+ *@s: pointer char
+ *Return: int length
  */
 
-char *cap_string(char *s)
+int _strlen(char *s)
 {
-	int k, p;
+	int len = 0;
 
-	p = 0;
-	while (s[p] != '\0')
+	while (*s++)
 	{
-		if (s[0] >= 'a' && s[0] <= 'z')
-		{
-			s[0] = s[0] - 32;
-		}
+		len++;
+	}
+	return (len);
+}
+/**
+ *cap_string - changes all lowercase letters
+ *@s1: pointer parameter"
+ *Description: changes all lowercase letters
+ *Return: return pointer
+ */
+char *cap_string(char *s1)
+{
+	int i, j;
 
-		char arr[13] = {' ', '\t', '\n', ',', ';', '.',
-			'!', '?', '"', '(', ')', '{', '}'};
-
-		for (k = 0; k < 13; k++)
+	for (i = 0; i < _strlen(s1) - 1; i++)
+	{
+		if (
+			s1[i] == ' ' ||
+			s1[i] == '\t' ||
+			s1[i] == '\n' ||
+			s1[i] == ',' ||
+			s1[i] == ';' ||
+			s1[i] == '.' ||
+			s1[i] == '!' ||
+			s1[i] == '?' ||
+			s1[i] == '"' ||
+			s1[i] == '(' ||
+			s1[i] == ')' ||
+			s1[i] == '{' ||
+			s1[i] == '}' ||
+			i == 0
+		)
 		{
-			if (s[p] == arr[k])
+			for (j = 'a'; j <= 'z'; j++)
 			{
-				if (s[p + 1] >= 'a' && s[p] <= 'z')
+				if (s1[i + 1] == j && i != 0)
 				{
-					s[p + 1] = s[p + 1] - 32;
+					s1[i + 1] = j - 32;
+				} else if (s1[i] == j && i == 0)
+				{
+					s1[i] = j - 32;
 				}
 			}
 		}
-		p++;
 	}
-	return (s);
+	return (s1);
 }		
