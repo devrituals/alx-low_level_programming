@@ -1,4 +1,4 @@
-File 0: 0-binary_to_uint.c  Write a function that converts a binary number to an unsigned int.
+<b>File 0: 0-binary_to_uint.c  Write a function that converts a binary number to an unsigned int.
 
 File 1: 1-print_binary.c  Write a function that prints the binary representation of a number.
 
@@ -13,3 +13,4 @@ File 5: 5-flip_bits.c  Write a function that returns the number of bits you woul
 File 6: 100-get_endianness.c  Write a function that checks the endianness.
 
 File 7: 101-password  Finding a password for a program.
+<\b>
