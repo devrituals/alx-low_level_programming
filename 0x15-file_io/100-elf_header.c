@@ -77,7 +77,7 @@ void print_class(unsigned char *e_ident)
 	printf("none\n");
 	break;
 	case ELFCLASS32:
-		printf("ELF32\n");
+	printf("ELF32\n");
 	break;
 	case ELFCLASS64:
 		printf("ELF64\n");
@@ -292,7 +292,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	if (r == -1)
 	{
 	free(header);
-		close_elf(o);
+	close_elf(o);
 	dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 	exit(98);
 	}
