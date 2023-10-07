@@ -3,6 +3,7 @@
 /**
  * hash_table_delete - Deletes a hash table.
  * @ht: A pointer to a hash table.
+ * AUTH: ABDELBAR AD, this time coding was fun
  */
 void hash_table_delete(hash_table_t *ht)
 {
