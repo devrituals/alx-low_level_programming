@@ -6,6 +6,7 @@
  * @key: The key to add - cannot be an empty string.
  * @value: The value associated with key.
  *
+ * AUTH: ABDELBAR
  * Return: Upon failure - 0.
  *         Otherwise - 1.
  */
